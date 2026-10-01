@@ -19,7 +19,7 @@ body {
   line-height: 1.6;
 }
 
-a { color: var(--blue); text-decoration: none; }
+a { color: var(--purple); text-decoration: none; }
 img { background: var(--panel); }
 .muted { color: var(--light); font-size: 0.9rem; }
 .center { text-align: center; margin: 1rem 0; }
@@ -154,9 +154,9 @@ h2 {
   padding: 1.5rem;
   color: var(--text);
 }
-.card span { color: var(--blue); opacity: 0; margin-right: 0.3rem; }
+.card span { color: var(--purple); opacity: 0; margin-right: 0.3rem; }
 .card h3 { display: inline; }
-a.card:hover { border-color: var(--purple); }
+a.card:hover { border-color: var(--blue); }
 a.card:hover span { opacity: 1; }
 .card p { margin-top: 0.5rem; }
 
@@ -281,11 +281,8 @@ footer {
   .carousel img { height: 320px; }
 }
 
-body { cursor: url('images/cursor.cur') 0 0, auto; }
-a, button, .card, .carousel img, .gallery img { cursor: url('images/cursor.cur') 0 0, pointer; }
-
 .sprite {
-  height: 560px;
+  height: 380px;
   width: auto;
   background: none;
   position: relative;
