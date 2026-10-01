@@ -245,3 +245,16 @@ footer {
 @media (max-width: 700px) {
   .carousel img { height: 320px; }
 }
+
+/* THESIS */
+.thesis { display: grid; grid-template-columns: 300px 1fr; gap: 2rem; align-items: start; }
+.thesis-photos figure { margin-bottom: 1.2rem; }
+.thesis-photos img { width: 100%; display: block; border-radius: 10px; border: 2px solid var(--line); }
+.thesis-text h3 { color: var(--light); margin: 1.5rem 0 0.5rem; }
+.thesis-text h3:first-child { margin-top: 0; }
+.thesis-text ul { padding-left: 1.2rem; }
+.thesis-text li { margin-bottom: 0.6rem; }
+
+@media (max-width: 700px) {
+  .thesis { grid-template-columns: 1fr; }
+}
