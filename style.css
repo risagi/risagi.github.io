@@ -6,6 +6,7 @@
   --light: #9aa6d8;
   --blue: #7fa6e0;
   --text: #e8eaf4;
+  --side: 360px;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -18,19 +19,19 @@ body {
   line-height: 1.6;
 }
 
-a { color: var(--pink); text-decoration: none; }
+a { color: var(--blue); text-decoration: none; }
 img { background: var(--panel); }
 .muted { color: var(--light); font-size: 0.9rem; }
 .center { text-align: center; margin: 1rem 0; }
 
 /* SIDEBAR */
-body.has-side { padding-left: 300px; }
+body.has-side { padding-left: var(--side); }
 .sidebar {
   position: fixed;
   top: 0;
   left: 0;
   bottom: 0;
-  width: 380px;
+  width: var(--side);
   overflow-y: auto;
   padding: 1.5rem;
   background: var(--panel);
@@ -58,7 +59,7 @@ body.has-side { padding-left: 300px; }
 }
 .side-nav { display: flex; flex-direction: column; gap: 0.2rem; margin: 1rem 0; }
 .side-nav a { padding: 0.4rem 0.6rem; border-radius: 8px; font-weight: 700; }
-.side-nav a::before { content: '◆ '; opacity: 0; color: var(--pink); }
+.side-nav a::before { content: '◆ '; opacity: 0; color: var(--blue); }
 .side-nav a:hover, .side-nav a.active { background: var(--bg); color: var(--light); }
 .side-nav a:hover::before, .side-nav a.active::before { opacity: 1; }
 .tags { list-style: none; display: flex; flex-wrap: wrap; gap: 0.4rem; }
@@ -137,7 +138,7 @@ h2 {
   font-weight: 700;
   border: 2px solid var(--purple);
 }
-.btn:hover { background: var(--pink); border-color: var(--pink); color: var(--bg); }
+.btn:hover { background: var(--blue); border-color: var(--blue); color: var(--bg); }
 
 /* CARDS */
 .cards, .log {
@@ -153,7 +154,7 @@ h2 {
   padding: 1.5rem;
   color: var(--text);
 }
-.card span { color: var(--pink); opacity: 0; margin-right: 0.3rem; }
+.card span { color: var(--blue); opacity: 0; margin-right: 0.3rem; }
 .card h3 { display: inline; }
 a.card:hover { border-color: var(--purple); }
 a.card:hover span { opacity: 1; }
@@ -231,7 +232,7 @@ figcaption, .video p {
   padding: 0.5rem 0.8rem;
   cursor: pointer;
 }
-.carousel-wrap button:hover { background: var(--pink); border-color: var(--pink); color: var(--bg); }
+.carousel-wrap button:hover { background: var(--blue); border-color: var(--blue); color: var(--bg); }
 .prev { left: -0.5rem; }
 .next { right: -0.5rem; }
 
@@ -284,7 +285,7 @@ body { cursor: url('images/cursor.cur') 0 0, auto; }
 a, button, .card, .carousel img, .gallery img { cursor: url('images/cursor.cur') 0 0, pointer; }
 
 .sprite {
-  height: 380px;
+  height: 560px;
   width: auto;
   background: none;
   position: relative;
