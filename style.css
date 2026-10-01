@@ -201,6 +201,9 @@ footer {
   nav a { margin: 0 0.6rem; }
 }
 
+/* INSTAGRAM VIDS */
+.video .instagram-media { margin: 0 auto !important; min-width: 0 !important; max-width: 100% !important; }
+
 /* COLLECTIONS / CAROUSEL */
 .collection { margin-bottom: 3rem; }
 .collection h3 { color: var(--light); }
