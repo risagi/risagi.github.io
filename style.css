@@ -1,11 +1,11 @@
 :root {
-  --bg: #16141a;
-  --panel: #201d27;
-  --line: #3a3547;
-  --purple: #7b4fd6;
-  --light: #a99bd0;
-  --pink: #d9a0bd;
-  --text: #ece8f2;
+  --bg: #14151c;
+  --panel: #1d1f2b;
+  --line: #343850;
+  --purple: #5f6bb8;
+  --light: #9aa6d8;
+  --pink: #7fa6e0;
+  --text: #e8eaf4;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -249,7 +249,7 @@ figcaption, .video p {
   display: none;
   position: fixed;
   inset: 0;
-  background: rgba(22, 20, 26, 0.95);
+  background: rgba(20, 21, 28, 0.95);
   z-index: 100;
   align-items: center;
   justify-content: center;
@@ -268,10 +268,10 @@ footer {
 
 /* MOBILE: sidebar stacks on top */
 @media (max-width: 900px) {
-  body.has-side { padding-left: 0; }
+  body.has-side { padding-left: 380; }
   .sidebar {
     position: static;
-    width: 100%;
+    width: 340px;
     border-right: 0;
     border-bottom: 2px solid var(--line);
   }
