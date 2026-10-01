@@ -37,8 +37,8 @@ nav {
 nav a { margin-left: 1.2rem; font-weight: 700; }
 nav a:hover { color: var(--light); }
 .logo {
-  font-family: 'Press Start 2P', monospace;
-  font-size: 0.8rem;
+  font-family: 'Silkscreen', monospace;
+  font-size: 1rem;
   margin-left: 0;
   color: var(--light);
 }
@@ -46,8 +46,8 @@ nav a:hover { color: var(--light); }
 /* SECTIONS */
 section { max-width: 1000px; margin: 0 auto; padding: 3rem 1.5rem; }
 h2 {
-  font-family: 'Press Start 2P', monospace;
-  font-size: 1rem;
+  font-family: 'Silkscreen', monospace;
+  font-size: 1.3rem;
   color: var(--light);
   text-align: center;
   margin-bottom: 2rem;
@@ -94,8 +94,8 @@ h2 {
   background: var(--purple);
   padding: 0.3rem 1rem;
   border-radius: 8px;
-  font-family: 'Press Start 2P', monospace;
-  font-size: 0.65rem;
+  font-family: 'Silkscreen', monospace;
+  font-size: 0.85rem;
 }
 .dialogue p { margin-bottom: 1rem; font-size: 1.1rem; }
 
