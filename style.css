@@ -2,9 +2,9 @@
   --bg: #14151c;
   --panel: #1d1f2b;
   --line: #343850;
-  --purple: #5f6bb8;
+  --purple: #6a5fb8;
   --light: #9aa6d8;
-  --pink: #7fa6e0;
+  --blue: #7fa6e0;
   --text: #e8eaf4;
 }
 
@@ -30,7 +30,7 @@ body.has-side { padding-left: 300px; }
   top: 0;
   left: 0;
   bottom: 0;
-  width: 300px;
+  width: 380px;
   overflow-y: auto;
   padding: 1.5rem;
   background: var(--panel);
@@ -278,4 +278,16 @@ footer {
   section { padding: 2rem 1.2rem; }
   .thesis { grid-template-columns: 1fr; }
   .carousel img { height: 320px; }
+}
+
+body { cursor: url('images/cursor.cur') 0 0, auto; }
+a, button, .card, .carousel img, .gallery img { cursor: url('images/cursor.cur') 0 0, pointer; }
+
+.sprite {
+  height: 380px;
+  width: auto;
+  background: none;
+  position: relative;
+  z-index: 1;
+  margin-bottom: -3rem;
 }
