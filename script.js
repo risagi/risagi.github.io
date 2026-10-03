@@ -8,14 +8,6 @@ side.innerHTML = `
   <p class="muted">Class: English Major / Designer / Editor / Writer</p>
   <p>A final year student taking her Bachelor's Degree in English Language and Literature Studies. Passionate about video games, music, and playing games while listening to music.</p>
 
-  <nav class="side-nav">
-    <a href="index.html">Home</a>
-    <a href="writing.html">Writing</a>
-    <a href="thesis.html">Thesis</a>
-    <a href="design.html">Graphic Design</a>
-    <a href="video.html">Video Editing</a>
-  </nav>
-
   <h4>Education</h4>
   <p><strong>BA English Language &amp; Literature (Hons)</strong><br>Management &amp; Science University<br><span class="muted">Feb 2024 – Feb 2027</span></p>
   <p><strong>Foundation in Arts</strong><br>Universiti Tun Abdul Razak<br><span class="muted">Jul 2022 – Feb 2023</span></p>
@@ -39,8 +31,19 @@ side.innerHTML = `
 document.body.prepend(side);
 document.body.classList.add('has-side');
 
+const topnav = document.createElement('nav');
+topnav.className = 'topnav';
+topnav.innerHTML = `
+  <a href="index.html">Home</a>
+  <a href="writing.html">Writing</a>
+  <a href="thesis.html">Thesis</a>
+  <a href="design.html">Graphic Design</a>
+  <a href="video.html">Video Editing</a>
+`;
+document.body.prepend(topnav);
+
 const page = location.pathname.split('/').pop() || 'index.html';
-side.querySelectorAll('.side-nav a').forEach(a => {
+topnav.querySelectorAll('a').forEach(a => {
   if (a.getAttribute('href') === page) a.classList.add('active');
 });
 
