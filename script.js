@@ -67,3 +67,77 @@ document.querySelectorAll('.carousel-wrap').forEach(wrap => {
   wrap.querySelector('.prev').addEventListener('click', () => track.scrollBy({ left: -step(), behavior: 'smooth' }));
   wrap.querySelector('.next').addEventListener('click', () => track.scrollBy({ left: step(), behavior: 'smooth' }));
 });
+
+// TYPEWRITER DIALOGUE + CLICKABLE SPRITE
+const textEl = document.getElementById('dialogue-text');
+if (textEl) {
+  const lines = [
+    "Welcome, traveler! ✦ Care to see what I've made?",
+    "Need a designer? An editor? A writer? Good news: I come as a bundle.",
+    "Where's everyone going? Bingo?",
+    "To work.",
+  ];
+  const arrow = document.getElementById('next-arrow');
+  const sprite = document.getElementById('sprite');
+  let i = 0, timer, typing = false;
+
+  const finish = () => {
+    clearInterval(timer);
+    textEl.textContent = lines[i];
+    typing = false;
+    arrow.classList.add('done');
+  };
+
+  const say = () => {
+    clearInterval(timer);
+    typing = true;
+    arrow.classList.remove('done');
+    textEl.textContent = '';
+    let n = 0;
+    timer = setInterval(() => {
+      textEl.textContent = lines[i].slice(0, ++n);
+      if (n >= lines[i].length) finish();
+    }, 30);
+  };
+
+  sprite.addEventListener('click', () => {
+    if (typing) { finish(); return; }
+    i = (i + 1) % lines.length;
+    say();
+  });
+  say();
+}
+
+// CLICK SOUNDS + MUTE BUTTON
+let muted = false;
+try { muted = localStorage.getItem('muted') === '1'; } catch (e) {}
+let audio;
+function blip(freq = 660, dur = 0.07) {
+  if (muted) return;
+  audio = audio || new (window.AudioContext || window.webkitAudioContext)();
+  const o = audio.createOscillator();
+  const g = audio.createGain();
+  o.type = 'square';
+  o.frequency.value = freq;
+  g.gain.setValueAtTime(0.04, audio.currentTime);
+  g.gain.exponentialRampToValueAtTime(0.001, audio.currentTime + dur);
+  o.connect(g);
+  g.connect(audio.destination);
+  o.start();
+  o.stop(audio.currentTime + dur);
+}
+document.addEventListener('pointerdown', e => {
+  if (e.target.closest('#sprite')) blip(880);
+  else if (e.target.closest('a, button, .card, .carousel img, .gallery img')) blip(660);
+});
+
+const muteBtn = document.createElement('button');
+muteBtn.id = 'mute';
+muteBtn.setAttribute('aria-label', 'Toggle sound');
+muteBtn.textContent = muted ? '🔇' : '🔊';
+muteBtn.addEventListener('click', () => {
+  muted = !muted;
+  muteBtn.textContent = muted ? '🔇' : '🔊';
+  try { localStorage.setItem('muted', muted ? '1' : '0'); } catch (e) {}
+});
+document.body.appendChild(muteBtn);

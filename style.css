@@ -305,3 +305,30 @@ footer {
   padding-left: 1rem;
   margin: 0.8rem 0;
 }
+
+/* DIALOGUE EXTRAS */
+#dialogue-text { min-height: 4.2rem; }
+#sprite { cursor: pointer; }
+.next-arrow {
+  position: absolute;
+  right: 1.2rem;
+  bottom: 1rem;
+  color: var(--light);
+  opacity: 0;
+}
+.next-arrow.done { opacity: 1; animation: bounce 1s infinite; }
+@keyframes bounce { 50% { transform: translateY(4px); } }
+
+/* MUTE BUTTON */
+#mute {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 50;
+  background: var(--panel);
+  border: 2px solid var(--line);
+  border-radius: 8px;
+  padding: 0.4rem 0.6rem;
+  cursor: pointer;
+}
+#mute:hover { border-color: var(--purple); }
