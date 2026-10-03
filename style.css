@@ -289,3 +289,10 @@ footer {
   z-index: 1;
   margin-bottom: -3rem;
 }
+
+.excerpt {
+  font-style: italic;
+  border-left: 3px solid var(--purple);
+  padding-left: 1rem;
+  margin: 0.8rem 0;
+}
