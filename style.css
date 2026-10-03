@@ -57,11 +57,19 @@ body.has-side { padding-left: var(--side); }
   padding-bottom: 0.3rem;
   border-bottom: 2px solid var(--line);
 }
-.side-nav { display: flex; flex-direction: column; gap: 0.2rem; margin: 1rem 0; }
-.side-nav a { padding: 0.4rem 0.6rem; border-radius: 8px; font-weight: 700; }
-.side-nav a::before { content: '◆ '; opacity: 0; color: var(--blue); }
-.side-nav a:hover, .side-nav a.active { background: var(--bg); color: var(--light); }
-.side-nav a:hover::before, .side-nav a.active::before { opacity: 1; }
+.topnav {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.4rem;
+  padding: 0.8rem 2rem;
+  background: var(--panel);
+  border-bottom: 2px solid var(--line);
+}
+.topnav a { padding: 0.3rem 0.8rem; border-radius: 8px; font-weight: 700; }
+.topnav a:hover, .topnav a.active { background: var(--bg); color: var(--light); }
 .tags { list-style: none; display: flex; flex-wrap: wrap; gap: 0.4rem; }
 .tags li {
   background: var(--bg);
@@ -92,7 +100,7 @@ h2 {
 
 /* HOMEPAGE / WELCOME SCREEN */
 .hero {
-  min-height: 100vh;
+  min-height: calc(100vh - 3.5rem);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -279,6 +287,7 @@ footer {
   section { padding: 2rem 1.2rem; }
   .thesis { grid-template-columns: 1fr; }
   .carousel img { height: 320px; }
+  .topnav { justify-content: center; flex-wrap: wrap; padding: 0.8rem 1rem; }
 }
 
 .sprite {
