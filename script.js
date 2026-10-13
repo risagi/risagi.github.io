@@ -148,12 +148,3 @@ muteBtn.addEventListener('click', () => {
   try { localStorage.setItem('muted', muted ? '1' : '0'); } catch (e) {}
 });
 document.body.appendChild(muteBtn);
-
-.sidebar details { border-bottom: 2px solid var(--line); padding: 0.6rem 0; }
-.sidebar summary {
-  font-family: 'Silkscreen', monospace;
-  font-size: 0.9rem;
-  color: var(--light);
-  cursor: pointer;
-}
-.sidebar details[open] summary { margin-bottom: 0.6rem; }
