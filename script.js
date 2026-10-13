@@ -49,6 +49,18 @@ topnav.innerHTML = `
 `;
 document.body.prepend(topnav);
 
+const toggle = document.createElement('button');
+toggle.id = 'side-toggle';
+toggle.setAttribute('aria-label', 'Open profile');
+toggle.textContent = '☰ Profile';
+topnav.prepend(toggle);
+toggle.addEventListener('click', () => document.body.classList.toggle('side-open'));
+document.addEventListener('click', e => {
+  if (document.body.classList.contains('side-open') && !e.target.closest('.sidebar, #side-toggle')) {
+    document.body.classList.remove('side-open');
+  }
+});
+
 const page = location.pathname.split('/').pop() || 'index.html';
 topnav.querySelectorAll('a').forEach(a => {
   if (a.getAttribute('href') === page) a.classList.add('active');
