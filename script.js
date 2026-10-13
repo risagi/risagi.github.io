@@ -8,18 +8,25 @@ side.innerHTML = `
   <p class="muted">Class: English Major / Designer / Editor / Writer</p>
   <p>A final year student taking her Bachelor's Degree in English Language and Literature Studies. Passionate about video games, music, and playing games while listening to music.</p>
 
-  <h4>Education</h4>
-  <p><strong>BA English Language &amp; Literature (Hons)</strong><br>Management &amp; Science University<br><span class="muted">Feb 2024 – Feb 2027</span></p>
-  <p><strong>Foundation in Arts</strong><br>Universiti Tun Abdul Razak<br><span class="muted">Jul 2022 – Feb 2023</span></p>
+  <details>
+    <summary>Education</summary>
+    <p><strong>BA English Language &amp; Literature (Hons)</strong><br>Management &amp; Science University<br><span class="muted">Feb 2024 – Present</span></p>
+    <p><strong>Foundation in Arts</strong><br>Universiti Tun Abdul Razak<br><span class="muted">Jul 2022 – Feb 2023</span></p>
+  </details>
 
-  <h4>Skills</h4>
-  <ul class="tags">
-    <li>Photoshop</li><li>DaVinci Resolve</li><li>CapCut</li><li>Canva</li>
-    <li>Audacity</li><li>WordPress</li><li>Microsoft Office</li><li>Google Workspace</li>
-  </ul>
+  <details>
+    <summary>Skills</summary>
+    <ul class="tags">
+      <li>Photoshop</li><li>DaVinci Resolve</li><li>CapCut</li><li>Canva</li>
+      <li>Audacity</li><li>WordPress</li><li>Microsoft Office</li><li>Google Workspace</li>
+    </ul>
+    <p>Languages: English, Malay (both fluent)</p>
+  </details>
 
-  <h4>Languages</h4>
-  <p>English (Fluent) · Malay (Fluent)</p>
+  <details>
+    <summary>Achievements</summary>
+    <p>◆ Dean's List, Semester 1 and 4<br>◆ Bronze Award, Undergraduate Research Presentation Competition 2026</p>
+  </details>
 
   <h4>Contact</h4>
   <div class="side-links">
@@ -141,3 +148,12 @@ muteBtn.addEventListener('click', () => {
   try { localStorage.setItem('muted', muted ? '1' : '0'); } catch (e) {}
 });
 document.body.appendChild(muteBtn);
+
+.sidebar details { border-bottom: 2px solid var(--line); padding: 0.6rem 0; }
+.sidebar summary {
+  font-family: 'Silkscreen', monospace;
+  font-size: 0.9rem;
+  color: var(--light);
+  cursor: pointer;
+}
+.sidebar details[open] summary { margin-bottom: 0.6rem; }
