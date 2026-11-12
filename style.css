@@ -376,3 +376,24 @@ footer {
   .prev { left: 0.3rem; }
   .next { right: 0.3rem; }
 }
+
+/* GAME REVIEWS */
+.group { color: var(--light); margin: 2.5rem 0 1rem; }
+.reviews {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 1.2rem;
+  align-items: start;
+}
+.review details { margin-top: 0.8rem; }
+.review summary {
+  cursor: pointer;
+  font-weight: 700;
+  color: var(--light);
+  list-style: none;
+}
+.review summary::-webkit-details-marker { display: none; }
+.review summary::before { content: '▶ '; }
+.review details[open] summary::before { content: '▼ '; }
+.review details[open] summary { margin-bottom: 0.8rem; }
+.review details p { margin-bottom: 0.8rem; }
